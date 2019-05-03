@@ -10,10 +10,15 @@ provider "aws" {
 //--------------------------------------------------------------------
 // Data Sources
 
-data "aws_ami_ids" "ubuntu" {
-    owners = ["345084742485"]
+resource "aws_instance" "web" { 
+    ami     = "${var.ami_id}"
+    instance_type = "${var.instance_type}"
+    availability_zone = "${var.aws_region}a"
+    associate_public_ip_address   = "true"
+    root_block_device {
+    volume_size = "${var.volume_size}"
+  }
 }
-
 /*data "aws_ami" "ubuntu" {
   most_recent = true
 

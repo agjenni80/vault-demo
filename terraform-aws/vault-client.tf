@@ -2,7 +2,7 @@
 // Vault Client Instance
 
 resource "aws_instance" "vault-client" {
-  ami                         = "${data.aws_ami.ubuntu.id}"
+  ami                         = "${var.ami_id}"
   instance_type               = "${var.instance_type}"
   subnet_id                   = "${module.vault_demo_vpc.public_subnets[0]}"
   key_name                    = "${var.key_name}"

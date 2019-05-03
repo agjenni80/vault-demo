@@ -8,6 +8,15 @@ variable consul_dc {
 default="dc1"
 }
 
+variable "ami_id" {
+  description = "AMI ID"
+  default     = "ami-10b9cb71"
+}
+
+variable "volume_size" {
+   description = "size of root device"
+   default     = "40"
+}   
 variable vault_server_count {
   default = 3
 }
