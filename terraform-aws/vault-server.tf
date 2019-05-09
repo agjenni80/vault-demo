@@ -33,7 +33,6 @@ data "template_file" "vault-server" {
     tpl_consul_zip_file         = "${var.consul_zip_file}"
     tpl_consul_dc               = "${var.consul_dc}"
     tpl_vault_service_name      = "vault-${var.environment_name}"
-    tpl_kms_key                 = "${aws_kms_key.vault.id}"
     tpl_aws_region              = "${var.aws_region}"
     tpl_consul_bootstrap_expect = "${var.vault_server_count}"
   }

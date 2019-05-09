@@ -8,15 +8,6 @@ variable consul_dc {
 default="dc1"
 }
 
-variable "ami_id" {
-  description = "AMI ID"
-  default     = "ami-10b9cb71"
-}
-
-variable "volume_size" {
-   description = "size of root device"
-   default     = "40"
-}   
 variable vault_server_count {
   default = 3
 }
@@ -33,6 +24,11 @@ variable consul_zip_file {
 
 # Instance size
 variable instance_type {}
+
+# AMI ID
+variable ami_id {
+   default = "ami-b44b2fd5"
+}
 
 # SSH key name to access EC2 instances (should already exist)
 variable key_name {}
